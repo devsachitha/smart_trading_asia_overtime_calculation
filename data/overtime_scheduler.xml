@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+   	 <record id="ir_cron_scheduler_overtime" model="ir.cron">
+         <field name="name">Overtime Scheduler</field>
+         <field name="model_id" ref="model_codeso_hr_overtime"/>
+         <field name="state">code</field>
+         <field name="code">model.run_overtime_scheduler()</field>
+         <field name="interval_number">1</field>
+         <field name="interval_type">days</field>
+         <field name="numbercall">-1</field>
+         <field name="doall" eval="False"/>
+    </record>
+
+    <!-- To Set Overt time calculation False -->
+    <record id="ir_cron_scheduler_reset_overtime" model="ir.cron">
+         <field name="name">Attendance Overtime Reset</field>
+         <field name="model_id" ref="model_codeso_hr_overtime"/>
+         <field name="state">code</field>
+         <field name="code">model.set_overtime_reset()</field>
+         <field name="interval_number">1</field>
+         <field name="interval_type">days</field>
+         <field name="numbercall">-1</field>
+         <field name="doall" eval="False"/>
+    </record>
+
+</flectra>
